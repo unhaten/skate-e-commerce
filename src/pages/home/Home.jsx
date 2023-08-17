@@ -15,20 +15,19 @@ const Home = () => {
     // };
 
     return (
-        <LoadingScreen></LoadingScreen>
-        // <section className="section__home">
-        //     <div className="home__header">
-        //         <h1>Styleride Skate Co.</h1>
-        //         <h2>Step Up Your Game, Step into Style</h2>
-        //         {/* <Skateboard zoomed={zoomed} setZoomed={setZoomed}></Skateboard> */}
-        //         {/* <button onClick={handleZoom}>click to zoom</button> */}
-        //         {/* <Box></Box> */}
-        //         <Introduction></Introduction>
-        //         <Gifs></Gifs>
-        //         <Reviews></Reviews>
-        //         <WaitingFor></WaitingFor>
-        //     </div>
-        // </section>
+        <section className="section__home">
+            <div className="home__header">
+                <h1>Styleride Skate Co.</h1>
+                <h2>Step Up Your Game, Step into Style</h2>
+                {/* <Skateboard zoomed={zoomed} setZoomed={setZoomed}></Skateboard> */}
+                {/* <button onClick={handleZoom}>click to zoom</button> */}
+                {/* <Box></Box> */}
+                <Introduction></Introduction>
+                <Gifs></Gifs>
+                <Reviews></Reviews>
+                <WaitingFor></WaitingFor>
+            </div>
+        </section>
     );
 };
 
