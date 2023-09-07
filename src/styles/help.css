@@ -1,0 +1,107 @@
+.section__help {
+    padding: 0 15px;
+}
+
+.help__list {
+    margin-top: 25px;
+}
+
+.help__item:not(:first-child) {
+    margin-top: 20px;
+}
+
+.help__question {
+    padding: 20px;
+    border: 2px solid #121010;
+    font-size: 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -moz-transition: background-color 0.3s ease, color 0.3s ease;
+    -ms-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.help__question:active {
+    background-color: #b81922;
+    color: white;
+}
+
+.answer_hidden span {
+    display: none;
+}
+
+.help__answer {
+    display: block;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 18px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+}
+
+/* .answer_visible:active span {
+    opacity: 1;
+} */
+
+@media screen and (min-width: 426px) {
+    .section__help {
+        padding: 0 30px;
+    }
+
+    .help__header {
+        font-size: 30px;
+    }
+
+    .help__item {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .help__item:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    .help__item:last-child {
+        margin-bottom: 15px;
+    }
+
+    .help__question {
+        padding: 30px;
+        font-size: 26px;
+    }
+
+    .help__answer {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .help__question:hover {
+        background-color: #80161c;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .help__question {
+        padding: 40px;
+        font-size: 30px;
+    }
+
+    .help__answer {
+        margin-top: 30px;
+        font-size: 28px;
+    }
+}

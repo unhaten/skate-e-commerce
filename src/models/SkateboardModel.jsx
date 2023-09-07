@@ -4,42 +4,33 @@ import { useState } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function SkateboardModel(props) {
-    const { nodes, materials } = useGLTF("/vans.glb");
-
-    const [isRotating, setIsRotating] = useState(false);
-    const rotationSpeed = Math.PI / (60 * 0.5);
-
-    const handleRotate = () => {
-        if (!isRotating) {
-            setIsRotating(true);
-            setTargetRotation(rotationX === 0 ? Math.PI : 0);
-        }
-    };
-
-    const [rotationX, setRotationX] = useState(0);
-    const [targetRotation, setTargetRotation] = useState(0);
+    const { nodes, materials } = useGLTF(
+        `/${props.filename ? props.filename : "vans"}.glb`
+    );
 
     useFrame(({ camera }) => {
-        if (isRotating) {
-            setRotationX((prevRotationX) => {
+        if (props.isRotating) {
+            props.setRotationX((prevRotationX) => {
                 const newRotationX =
                     prevRotationX +
-                    Math.sign(targetRotation - prevRotationX) * rotationSpeed;
+                    Math.sign(props.targetRotation - prevRotationX) *
+                        props.rotationSpeed;
 
                 if (
-                    (targetRotation === Math.PI &&
-                        newRotationX >= targetRotation) ||
-                    (targetRotation === 0 && newRotationX <= targetRotation)
+                    (props.targetRotation === Math.PI &&
+                        newRotationX >= props.targetRotation) ||
+                    (props.targetRotation === 0 &&
+                        newRotationX <= props.targetRotation)
                 ) {
-                    setIsRotating(false);
-                    return targetRotation;
+                    props.setIsRotating(false);
+                    return props.targetRotation;
                 }
 
                 return newRotationX;
             });
         }
 
-        // Zoom the camera to the wheels when zoomed state is true  
+        // Zoom the camera to the wheels when zoomed state is true
         if (props.zoomed) {
             camera.position.set(0, 2.5, 0); // Adjust the position based on your preference
             camera.lookAt(0, 0.6, 0.65); // Point the camera towards the skateboard
@@ -50,12 +41,8 @@ export function SkateboardModel(props) {
     });
 
     return (
-        <group
-            {...props}
-            dispose={null}
-            onClick={handleRotate}
-            rotation={[rotationX, 0, 0]}
-        >
+        <group {...props} dispose={null} rotation={[props.rotationX, 0, 0]}>
+            {/* board */}
             <group scale={[0.4, 1, 1.334]}>
                 <mesh
                     geometry={nodes.Plane004.geometry}
@@ -73,6 +60,7 @@ export function SkateboardModel(props) {
                 rotation={[Math.PI, 0, Math.PI]}
                 scale={[0.092, 0.008, 0.119]}
             />
+            {/* transmission */}
             <mesh
                 geometry={nodes.Cylinder003.geometry}
                 material={materials["Material.001"]}
@@ -80,6 +68,7 @@ export function SkateboardModel(props) {
                 rotation={[-Math.PI, 0, 0]}
                 scale={[0.081, 0.059, 0.081]}
             />
+            {/* wheel */}
             <mesh
                 geometry={nodes.Cylinder004.geometry}
                 material={nodes.Cylinder004.material}
@@ -87,6 +76,7 @@ export function SkateboardModel(props) {
                 rotation={[Math.PI, 0, Math.PI / 2]}
                 scale={[0.079, 0.048, 0.079]}
             />
+            {/* wheel */}
             <mesh
                 geometry={nodes.Cylinder005.geometry}
                 material={nodes.Cylinder005.material}
@@ -100,6 +90,7 @@ export function SkateboardModel(props) {
                 position={[0, -0.033, -0.71]}
                 scale={[0.092, 0.008, 0.119]}
             />
+            {/* transmission */}
             <mesh
                 geometry={nodes.Cylinder001.geometry}
                 material={materials["Material.001"]}
@@ -107,6 +98,7 @@ export function SkateboardModel(props) {
                 rotation={[0, 0, Math.PI]}
                 scale={[0.081, 0.059, 0.081]}
             />
+            {/* wheel */}
             <mesh
                 geometry={nodes.Cylinder002.geometry}
                 material={nodes.Cylinder002.material}
@@ -114,6 +106,7 @@ export function SkateboardModel(props) {
                 rotation={[0, 0, -Math.PI / 2]}
                 scale={[0.079, 0.048, 0.079]}
             />
+            {/* wheel */}
             <mesh
                 geometry={nodes.Cylinder006.geometry}
                 material={nodes.Cylinder006.material}
@@ -125,4 +118,4 @@ export function SkateboardModel(props) {
     );
 }
 
-useGLTF.preload("/vans.glb");
+// useGLTF.preload("/vans.glb");

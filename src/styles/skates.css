@@ -1,0 +1,345 @@
+/* ! SKATES */
+
+.section__skates {
+    position: relative;
+    padding: 0 15px;
+}
+
+/* ! SKATEBOARD MODEL */
+.skateboard-model {
+    height: 250px !important;
+}
+
+/* ! POPUP */
+
+/* ! FIXME: make darker everything outside of the popup + animations */
+
+.activePopup {
+}
+
+.skates__popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 10px;
+    width: 80%;
+    height: 500px;
+    background-color: #eaeaea;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.popup__button_close {
+    display: block;
+    margin-left: auto;
+}
+
+.popup__image {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+}
+
+.popup__name {
+    text-align: center;
+}
+
+.popup__price {
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.popup__description {
+    max-height: 100px;
+    margin-top: 15px;
+    padding: 0 20px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.popup__button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.popup__button {
+    padding: 16px 32px;
+    font-size: 18px;
+    color: whitesmoke;
+    background-color: #121010;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+}
+
+.popup__button:active {
+    background-color: #1da100;
+}
+
+@media screen and (min-width: 426px) {
+    .skateboard-model {
+        height: 350px !important;
+    }
+
+    .skates__popup {
+        height: 650px;
+    }
+
+    .popup__name,
+    .popup__price,
+    .popup__description {
+        font-size: 24px;
+    }
+
+    .popup__button {
+        margin-top: 30px;
+        padding: 22px 44px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .skateboard-model {
+        height: 400px !important;
+    }
+
+    .skates__popup {
+        height: 700px;
+    }
+
+    .popup__name,
+    .popup__price,
+    .popup__description {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .skates__popup {
+        height: 900px;
+    }
+
+    .skateboard-model {
+        height: 580px !important;
+    }
+
+    .popup__name,
+    .popup__price,
+    .popup__description {
+        font-size: 30px;
+    }
+
+    .popup__button {
+        font-size: 28px;
+    }
+}
+
+/* ! PRESET */
+
+.skates__presets {
+    margin-top: 15px;
+}
+
+.presets__slider {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.presets__list {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+}
+
+.presets__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 0 auto;
+    width: 99%;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.card__image {
+    display: block;
+    height: 180px;
+    width: 180px;
+}
+
+.card__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.card__name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card__price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ! CREATE */
+
+.skates__text {
+    margin-top: 10px;
+}
+
+.skates__button {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 16px 32px;
+    width: fit-content;
+    font-size: 18px;
+    color: whitesmoke;
+    background-color: #121010;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.skates__create {
+    padding: 0 5px;
+}
+
+.create__progress {
+    margin-top: 20px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.create__text {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.create__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 15px;
+    width: 100px;
+    color: white;
+    background-color: rgb(119, 63, 63);
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+@media screen and (min-width: 426px) {
+    .section__skates {
+        padding: 0 30px;
+    }
+
+    .presets__header {
+        font-size: 26px;
+    }
+
+    .presets__card {
+        height: 400px;
+    }
+
+    .card__image {
+        width: 260px;
+        height: 260px;
+    }
+
+    .card__content {
+        margin-top: 30px;
+    }
+
+    .card__name,
+    .card__price {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .presets__slider {
+        margin-top: 30px;
+    }
+
+    .section__skates {
+        padding: 0 50px;
+    }
+
+    .presets__card {
+        height: 500px;
+    }
+
+    .card__image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .card__content {
+        margin-top: 50px;
+    }
+
+    .card__name,
+    .card__price {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .skates__presets {
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 80%;
+    }
+
+    .presets__header {
+        font-size: 30px;
+    }
+
+    .card__image {
+        width: 360px;
+        height: 360px;
+    }
+
+    .card__name,
+    .card__price {
+        font-size: 36px;
+    }
+}

@@ -6,8 +6,11 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/home/Home";
-import About from "./pages/about/About";
+import Skates from "./pages/skates/Skates";
+import Create from "./pages/skates/create/Create";
+import Help from "./pages/help/Help";
 
+import SkateLayout from "./layouts/SkateLayout";
 import MainLayout from "./layouts/MainLayout";
 
 const App = () => {
@@ -15,7 +18,12 @@ const App = () => {
         createRoutesFromElements(
             <Route path="/" element={<MainLayout />}>
                 <Route index element={<Home />} />
-                <Route path="about" element={<About />}></Route>
+                <Route path="help" element={<Help />}></Route>
+
+                <Route path="skates" element={<SkateLayout />}>
+                    <Route index element={<Skates />}></Route>
+                    <Route path="create" element={<Create />}></Route>
+                </Route>
             </Route>
         )
     );

@@ -5,9 +5,19 @@ const Burger = ({ isBurgerActive, setIsBurgerActive }) => {
         setIsBurgerActive((prev) => !prev);
     };
 
+    const handleClose = () => {
+        setIsBurgerActive((prev) => !prev);
+    };
+
     return (
         <>
-            <label className="burger__container">
+            <label
+                className={
+                    !isBurgerActive
+                        ? "burger__container"
+                        : "burger__container burger__container_active"
+                }
+            >
                 <input type="checkbox" onClick={handleOpen} />
                 <svg className="burger" viewBox="0 0 32 32">
                     <path
@@ -24,12 +34,25 @@ const Burger = ({ isBurgerActive, setIsBurgerActive }) => {
                         : "burger__links"
                 }
             >
-                <NavLink className="burger__item">Skates</NavLink>
-                <NavLink to="about" className="burger__item">
-                    About
+                <NavLink className="burger__item" to="/" onClick={handleClose}>
+                    Homepage
                 </NavLink>
-                <NavLink className="burger__item">Contact</NavLink>
-                <NavLink className="burger__item">Help</NavLink>
+
+                <NavLink
+                    className="burger__item"
+                    to="skates"
+                    onClick={handleClose}
+                >
+                    Skates
+                </NavLink>
+
+                <NavLink
+                    className="burger__item"
+                    to="help"
+                    onClick={handleClose}
+                >
+                    Help
+                </NavLink>
             </ul>
         </>
     );

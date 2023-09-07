@@ -13,16 +13,18 @@ const MainLayout = () => {
         }, 3000);
     }, []);
 
-    // !FIXME: how to show content after opacity disappears?
+    // ! FIXME: how to make loader properly?
 
     return (
         <>
             {firstLoading ? (
-                <LoadingScreen opacity={1} />
+                <>
+                    <LoadingScreen opacity={1}></LoadingScreen>
+                </>
             ) : (
                 <>
                     <Header></Header>
-                    <main>
+                    <main className="main">
                         <Outlet></Outlet>
                     </main>
                     <Footer></Footer>

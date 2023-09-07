@@ -16,17 +16,21 @@ const Home = () => {
 
     return (
         <section className="section__home">
-            <div className="home__header">
-                <h1>Styleride Skate Co.</h1>
-                <h2>Step Up Your Game, Step into Style</h2>
+            <div className="home__background">
+                <div className="home__content">
+                    <h1 className="home__header">Styleride Skate Co.</h1>
+                    <h2 className="home__slogan">
+                        Step Up Your Game, Step into Style
+                    </h2>
+                </div>
                 {/* <Skateboard zoomed={zoomed} setZoomed={setZoomed}></Skateboard> */}
                 {/* <button onClick={handleZoom}>click to zoom</button> */}
                 {/* <Box></Box> */}
-                <Introduction></Introduction>
-                <Gifs></Gifs>
-                <Reviews></Reviews>
-                <WaitingFor></WaitingFor>
             </div>
+            <Introduction></Introduction>
+            {/* <Gifs></Gifs> */}
+            <Reviews></Reviews>
+            <WaitingFor></WaitingFor>
         </section>
     );
 };
